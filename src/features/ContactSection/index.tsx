@@ -4,8 +4,24 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import CTAButton from "../../components/CTAButton";
 import SectionTitle from "../../components/SectionTitle";
 import { contactSchema } from "../../schemas/contactSchema";
+import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 
 type ContactFormData = z.infer<typeof contactSchema>;
+
+const containerVariants: Variants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
+};
 
 export default function ContactSection() {
   const {
@@ -23,23 +39,32 @@ export default function ContactSection() {
   return (
     <section>
       <SectionTitle title="Bizimlə əlaqə" />
+
       <div
         className="rounded-3xl relative w-full bg-center bg-cover bg-no-repeat"
         style={{
           backgroundImage: "url('/contact-worker.webp')",
         }}>
-        <div className="flex flex-col lg:flex-row relative z-10 items-center justify-between lg:min-h-[clamp(30rem,90vh,50rem)] px-[clamp(1rem,5vw,4rem)] py-[clamp(2rem,6vw,5rem)] text-white">
-          {/* Başlık */}
-          <h3 className="text-[clamp(1.5rem,10vw,3.5rem)] font-bold text-left mb-6 lg:mb-0 lg:max-w-[40%]">
+        <motion.div
+          className="flex flex-col lg:flex-row relative z-10 items-center justify-between lg:min-h-[clamp(30rem,90vh,50rem)] px-[clamp(1rem,5vw,4rem)] py-[clamp(2rem,6vw,5rem)] text-white"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}>
+          <motion.h3
+            className="text-[clamp(1.5rem,10vw,3.5rem)] font-bold text-left mb-6 lg:mb-0 lg:max-w-[40%]"
+            variants={itemVariants}>
             Gələcəyin tikintisini birlikdə quraq
-          </h3>
+          </motion.h3>
 
-          {/* Form */}
-          <form
+          <motion.form
             onSubmit={handleSubmit(onSubmit)}
-            className="w-full lg:w-[clamp(20rem,45vw,42rem)] bg-white/95 backdrop-blur-md text-black rounded-3xl px-[clamp(0.75rem,2vw,2rem)] py-[clamp(0.75rem,2vw,2.75rem)] shadow-xl">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
-              <div>
+            className="w-full lg:w-[clamp(20rem,45vw,42rem)] bg-white/95 backdrop-blur-md text-black rounded-3xl px-[clamp(0.75rem,2vw,2rem)] py-[clamp(0.75rem,2vw,2.75rem)] shadow-xl"
+            variants={itemVariants}>
+            <motion.div
+              className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3"
+              variants={containerVariants}>
+              <motion.div variants={itemVariants}>
                 <input
                   {...register("firstName")}
                   placeholder="Ad"
@@ -50,8 +75,9 @@ export default function ContactSection() {
                     {errors.firstName.message}
                   </p>
                 )}
-              </div>
-              <div>
+              </motion.div>
+
+              <motion.div variants={itemVariants}>
                 <input
                   {...register("lastName")}
                   placeholder="Soyad"
@@ -62,11 +88,13 @@ export default function ContactSection() {
                     {errors.lastName.message}
                   </p>
                 )}
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
-              <div>
+            <motion.div
+              className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3"
+              variants={containerVariants}>
+              <motion.div variants={itemVariants}>
                 <input
                   {...register("phone")}
                   placeholder="Nömrə"
@@ -77,8 +105,9 @@ export default function ContactSection() {
                     {errors.phone.message}
                   </p>
                 )}
-              </div>
-              <div>
+              </motion.div>
+
+              <motion.div variants={itemVariants}>
                 <input
                   {...register("email")}
                   placeholder="E-mail"
@@ -89,35 +118,41 @@ export default function ContactSection() {
                     {errors.email.message}
                   </p>
                 )}
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
-            <input
-              {...register("subject")}
-              placeholder="Mövzu"
-              className="w-full rounded-md border border-gray-300 focus:border-green-500 focus:ring-1 focus:ring-green-500 py-2 px-3 text-sm mb-3"
-            />
-            {errors.subject && (
-              <p className="text-red-500 text-xs mb-2">
-                {errors.subject.message}
-              </p>
-            )}
+            <motion.div variants={itemVariants}>
+              <input
+                {...register("subject")}
+                placeholder="Mövzu"
+                className="w-full rounded-md border border-gray-300 focus:border-green-500 focus:ring-1 focus:ring-green-500 py-2 px-3 text-sm mb-3"
+              />
+              {errors.subject && (
+                <p className="text-red-500 text-xs mb-2">
+                  {errors.subject.message}
+                </p>
+              )}
+            </motion.div>
 
-            <textarea
-              {...register("message")}
-              placeholder="Mesajınız"
-              rows={4}
-              className="w-full rounded-md border border-gray-300 focus:border-green-500 focus:ring-1 focus:ring-green-500 py-2 px-3 text-sm resize-none mb-4"
-            />
-            {errors.message && (
-              <p className="text-red-500 text-xs mb-2">
-                {errors.message.message}
-              </p>
-            )}
+            <motion.div variants={itemVariants}>
+              <textarea
+                {...register("message")}
+                placeholder="Mesajınız"
+                rows={4}
+                className="w-full rounded-md border border-gray-300 focus:border-green-500 focus:ring-1 focus:ring-green-500 py-2 px-3 text-sm resize-none mb-4"
+              />
+              {errors.message && (
+                <p className="text-red-500 text-xs mb-2">
+                  {errors.message.message}
+                </p>
+              )}
+            </motion.div>
 
-            <CTAButton width="full" />
-          </form>
-        </div>
+            <motion.div variants={itemVariants} whileHover={{ scale: 1.05 }}>
+              <CTAButton width="full" />
+            </motion.div>
+          </motion.form>
+        </motion.div>
       </div>
     </section>
   );
