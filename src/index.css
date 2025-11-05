@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;700;800&display=swap');
+@import "tailwindcss";
+
+
+:root {
+  --primary-color:var(--green-5);
+  --secondary-color:var(--green-10);
+  color: var(--black-5);
+  
+  font-family:  "Exo 2", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  --white-1:#EDEDED;
+  --white-2:#F0F0F0;
+  --white-3:#F7F7F7;
+  --white-4:#FFFFFF;
+  --white-5:#808080;
+  --white-10:#FDFDFD;
+  --white-15:#E2E2E2;
+  
+  --black-5:#171717;
+  --black-10:#030303;
+  --black-15:#3C3C3C;
+  --black-20:#252525;
+  --black-25:#111111;
+  --black-30:#ABABAB;
+  
+
+  --green-1:#C3EAC3;
+  --green-2:#8FD28F;
+  --green-3:#6E946E;
+  --green-4:#577b57;
+  --green-5:#116811;
+  --green-10: #C3EAC3;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@theme {
+  --color-primary-color:var(--primary-color);
+  --color-secondary-color:var(--secondary-color);
+  --color-black-5:var(--black-5);
+  --color-black-10:var(--black-10);
+  --color-black-15:var(--black-15);
+  --color-black-20:var(--black-20);
+  --color-black-25:var(--black-25);
+  --color-black-30:var(--black-30);
+
+  --color-white-1:var(--white-1);
+  --color-white-2:var(--white-2);
+  --color-white-3:var(--white-3);
+  --color-white-4:var(--white-4);
+  --color-white-5:var(--white-5);
+  --color-white-10:var(--white-10);
+  --color-white-15:var(--white-15);
+
+  --color-green-1:var(--green-1);
+  --color-green-2:var(--green-2);
+  --color-green-3:var(--green-3);
+  --color-green-4:var(--green-4);
+}
+
+.custom-flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
