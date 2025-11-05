@@ -26,10 +26,10 @@ const AccordionItem = ({
     <div
       onClick={() => setIsOpen(!isOpen)}
       className={cn(
-        "relative z-10 p-[clamp(1rem,3vw,2.5rem)] border border-green-3 rounded-t-3xl cursor-pointer select-none",
+        "relative z-10 p-[clamp(1rem,3vw,2.5rem)] border border-green-3 rounded-3xl cursor-pointer select-none",
 
         isOpen && "z-20",
-        number !== 1 && "-mt-5",
+        number !== 1 && "-mt-10",
         bgColor,
         borderColor
       )}>
