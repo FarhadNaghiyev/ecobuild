@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
 import CTAButton from "../../components/CTAButton";
-import PhoneIcon from "../../assets/icons/phone.svg";
+
 import CloseIcon from "../../assets/icons/close.svg";
 import MenuIcon from "../../assets/icons/menu.svg";
-import MessageCircleIcon from "../../assets/icons/message-circle.svg";
 
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState, AppDispatch } from "../../store";
 
 import { toggleSidebar } from "../../store/slices/isOpenSlice";
 import Navbar from "./Navbar";
+import ContactButtons from "./ContactButtons";
 export default function Header() {
   const dispatch: AppDispatch = useDispatch();
   const isOpen = useSelector((state: RootState) => state.sidebar.isOpen);
@@ -26,18 +26,7 @@ export default function Header() {
       <Navbar />
       {/* Right Buttons */}
       <div className="hidden xl:flex items-center gap-6">
-        <motion.div
-          className="custom-flex-center gap-5.5 h-6"
-          whileHover={{ scale: 1.1 }}
-          transition={{ type: "spring", stiffness: 300 }}>
-          <button className="rounded-lg">
-            <img src={PhoneIcon} alt="menu" className="size-6" />
-          </button>
-          <div className="h-full w-[0.01rem] bg-primary-color"></div>
-          <button className="rounded-lg">
-            <img src={MessageCircleIcon} alt="menu" className="size-6" />
-          </button>
-        </motion.div>
+        <ContactButtons />
 
         <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
           <CTAButton />
