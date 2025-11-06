@@ -18,7 +18,7 @@ const CTAButton: React.FC<CTAButtonProps> = ({
   return (
     <button
       className={cn(
-        `flex items-center justify-center gap-2.5 bg-black-10 rounded-xl text-white py-[clamp(0.75rem,2vh,1.125rem)] px-[clamp(1rem,3vw,1.5rem)] ${widthClass}`,
+        `flex items-center justify-center gap-2.5 bg-black-10 rounded-xl text-white py-[clamp(0.75rem,1vh,1.125rem)] px-[clamp(1rem,2vw,1.5rem)] ${widthClass}`,
         styleClasses
       )}
       onClick={onClick}>
