@@ -18,14 +18,26 @@ const CTAButton: React.FC<CTAButtonProps> = ({
   return (
     <button
       className={cn(
-        `flex items-center justify-center gap-2.5 bg-black-10 rounded-xl text-white py-[clamp(0.75rem,1vh,1.125rem)] px-[clamp(1rem,2vw,1.5rem)] ${widthClass}`,
+        `relative overflow-hidden flex items-center justify-center gap-2.5
+        rounded-xl text-white py-[clamp(0.75rem,1vh,1.125rem)] px-[clamp(1rem,2vw,1.5rem)]
+        bg-black-10 hover:bg-primary-color transition-colors duration-300 ease-out
+        group`,
+        widthClass,
         styleClasses
       )}
       onClick={onClick}>
-      <div className="flex items-center justify-center bg-secondary-color h-4 min-w-4 md:h-5 md:min-w-5 rounded-full">
-        <div className="bg-primary-color min-h-2 min-w-2 md:h-3 md:w-3 rounded-full"></div>
+      <div
+        className="flex items-center justify-center bg-secondary-color h-4 min-w-4 md:h-5 md:min-w-5 rounded-full 
+        relative overflow-hidden">
+        {/* --- İç daire sadece hover anında 1 kez büyüyüp geri döner --- */}
+        <div
+          className="bg-primary-color min-h-2 min-w-2 md:h-3 md:w-3 rounded-full
+          transition-transform duration-300 ease-out group-hover:animate-pulse-circle-once"></div>
       </div>
-      {children}
+
+      <span className="transition-transform duration-300 ease-out group-hover:translate-x-1">
+        {children}
+      </span>
     </button>
   );
 };

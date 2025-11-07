@@ -74,13 +74,24 @@
 html {
   scroll-behavior: smooth;
 }
-custom-section-p{
 
-  padding-top: clamp(1rem, 1vw, 2rem);    /* py-[clamp(1rem,1vw,2rem)] */
-  padding-bottom: clamp(1rem, 1vw, 2rem);
-  padding-left: clamp(1rem, 2vw, 4rem);   /* px-[clamp(1rem,4vw,4rem)] */
-  padding-right: clamp(1rem, 2vw, 4rem);
-  box-sizing: border-box; 
+
+
+
+
+@keyframes pulse-circle {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-circle-once {
+  animation: pulse-circle 0.8s ease-in-out 1 forwards;
 }
 
 
