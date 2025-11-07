@@ -3,7 +3,7 @@ import CTAButton from "../../components/CTAButton";
 
 function HeroSection() {
   return (
-    <div className="flex flex-col gap-10">
+    <section className="2xl:container 2xl:mx-auto px-5 lg:px-16 pt-4 lg:pt-8 flex flex-col gap-10">
       <div className="flex flex-col lg:flex-row items-start gap-6">
         <motion.h1
           className="m-0 p-0 flex-3 flex flex-col justify-start font-medium text-[clamp(1.25rem,7vw,3rem)] min-w-max"
@@ -29,14 +29,14 @@ function HeroSection() {
       </div>
 
       <motion.img
-        className="rounded-3xl w-full"
-        src="./hero.webp"
+        className="rounded-3xl w-full h-[443px] lg:h-[577px] object-cover"
+        src="./hero.jpg"
         alt="hero section image"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
       />
-    </div>
+    </section>
   );
 }
 

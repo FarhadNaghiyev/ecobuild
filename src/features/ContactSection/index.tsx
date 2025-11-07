@@ -37,7 +37,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section>
+    <section className="pb-10 lg:pb-[100px] 2xl:container 2xl:mx-auto flex flex-col gap-8 lg:gap-10 px-5 lg:px-16">
       <SectionTitle title="Bizimlə əlaqə" />
 
       <div

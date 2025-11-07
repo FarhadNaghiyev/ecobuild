@@ -8,8 +8,8 @@ import FacebookIcon from "../../assets/icons/facebook.svg";
 
 const Footer = () => {
   return (
-    <footer className="w-full px-[clamp(1rem,4vw,4rem)] py-[clamp(1rem,1vw,2rem)] bg-black-25 text-white">
-      <div className="flex flex-col md:flex-row justify-between gap-[clamp(2rem,5vw,4rem)]">
+    <footer className=" w-full py-[clamp(2rem,2vh,4rem)] bg-black-25 text-white">
+      <div className="2xl:container 2xl:mx-auto flex px-5 lg:px-16 flex-col md:flex-row justify-between gap-[clamp(2rem,5vw,4rem)]">
         <div className="flex flex-col gap-4 max-w-[clamp(12rem,30vw,20rem)]">
           <img
             src="/logo-desktop-white.webp"
@@ -122,7 +122,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="border-t border-white-10 mt-[clamp(2rem,4vw,3rem)] pt-4  text-[clamp(0.7rem,1vw,0.85rem)] opacity-70">
+      <div className="2xl:container 2xl:mx-auto flex px-5 lg:px-16  border-t border-white-10 mt-[clamp(2rem,4vw,3rem)] pt-4  text-[clamp(0.7rem,1vw,0.85rem)] opacity-70">
         © 2025 ECO BUILD QLD - Bütün hüquqlar qorunur
       </div>
     </footer>

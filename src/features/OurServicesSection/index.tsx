@@ -14,58 +14,60 @@ const itemVariants: Variants = {
 
 function OurServicesSection() {
   return (
-    <section className="py-20">
-      <SectionTitle title="Xidmətlərimiz" />
+    <section className="2xl:container 2xl:mx-auto px-5 lg:px-16">
+      <div className=" gap-10 flex flex-col">
+        <SectionTitle title="Xidmətlərimiz" />
 
-      <motion.div
-        className="flex flex-col gap-6"
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}>
-        <motion.div variants={itemVariants}>
-          <AccordionItem
-            number={1}
-            title="Torpaq işləri"
-            description="Açar-təslim sənaye obyektləri və modul konstruksiyalarla müştərilərə qısa zamanda istifadəyə tam hazır, enerjiyə qənaətcil və dayanıqlı məkanlar təqdim edirik."
-            imageUrl="./our-services-section.webp"
-            borderColor="border-green-1"
-            bgColor="bg-white-1"
-          />
-        </motion.div>
+        <motion.div
+          className="flex flex-col gap-6"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}>
+          <motion.div variants={itemVariants}>
+            <AccordionItem
+              number={1}
+              title="Torpaq işləri"
+              description="Açar-təslim sənaye obyektləri və modul konstruksiyalarla müştərilərə qısa zamanda istifadəyə tam hazır, enerjiyə qənaətcil və dayanıqlı məkanlar təqdim edirik."
+              imageUrl="./our-services-section.webp"
+              borderColor="border-green-1"
+              bgColor="bg-white-1"
+            />
+          </motion.div>
 
-        <motion.div variants={itemVariants}>
-          <AccordionItem
-            number={2}
-            title="Torpaq işləri"
-            description="Açar-təslim sənaye obyektləri və modul konstruksiyalarla müştərilərə qısa zamanda istifadəyə tam hazır, enerjiyə qənaətcil və dayanıqlı məkanlar təqdim edirik."
-            imageUrl="./our-services-section.webp"
-            borderColor="border-green-2"
-            bgColor="bg-white-2"
-          />
-        </motion.div>
+          <motion.div variants={itemVariants}>
+            <AccordionItem
+              number={2}
+              title="Torpaq işləri"
+              description="Açar-təslim sənaye obyektləri və modul konstruksiyalarla müştərilərə qısa zamanda istifadəyə tam hazır, enerjiyə qənaətcil və dayanıqlı məkanlar təqdim edirik."
+              imageUrl="./our-services-section.webp"
+              borderColor="border-green-2"
+              bgColor="bg-white-2"
+            />
+          </motion.div>
 
-        <motion.div variants={itemVariants}>
-          <AccordionItem
-            number={3}
-            title="Torpaq işləri"
-            description="Açar-təslim sənaye obyektləri və modul konstruksiyalarla müştərilərə qısa zamanda istifadəyə tam hazır, enerjiyə qənaətcil və dayanıqlı məkanlar təqdim edirik."
-            imageUrl="./our-services-section.webp"
-            borderColor="border-green-3"
-            bgColor="bg-white-3"
-          />
-        </motion.div>
+          <motion.div variants={itemVariants}>
+            <AccordionItem
+              number={3}
+              title="Torpaq işləri"
+              description="Açar-təslim sənaye obyektləri və modul konstruksiyalarla müştərilərə qısa zamanda istifadəyə tam hazır, enerjiyə qənaətcil və dayanıqlı məkanlar təqdim edirik."
+              imageUrl="./our-services-section.webp"
+              borderColor="border-green-3"
+              bgColor="bg-white-3"
+            />
+          </motion.div>
 
-        <motion.div variants={itemVariants}>
-          <AccordionItem
-            number={4}
-            title="Torpaq işləri"
-            description="Açar-təslim sənaye obyektləri və modul konstruksiyalarla müştərilərə qısa zamanda istifadəyə tam hazır, enerjiyə qənaətcil və dayanıqlı məkanlar təqdim edirik."
-            imageUrl="./our-services-section.webp"
-            borderColor="border-green-4"
-            bgColor="bg-white-4"
-          />
+          <motion.div variants={itemVariants}>
+            <AccordionItem
+              number={4}
+              title="Torpaq işləri"
+              description="Açar-təslim sənaye obyektləri və modul konstruksiyalarla müştərilərə qısa zamanda istifadəyə tam hazır, enerjiyə qənaətcil və dayanıqlı məkanlar təqdim edirik."
+              imageUrl="./our-services-section.webp"
+              borderColor="border-green-4"
+              bgColor="bg-white-4"
+            />
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 }

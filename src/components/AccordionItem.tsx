@@ -111,11 +111,11 @@ const AccordionItem = ({
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.25, ease: "easeInOut" }}
                   className="flex lg:justify-end overflow-hidden">
-                  <div className="rounded-2xl h-[clamp(176px,10vh,307px)] w-full lg:w-[394px] overflow-hidden">
+                  <div className="rounded-2xl h-44 md:h-[307px] w-full lg:w-[394px] overflow-hidden">
                     <img
                       src={imageUrl}
                       alt={title}
-                      className="rounded-2xl h-[clamp(176px,10vh,307px)] w-full lg:w-[394px] object-cover"
+                      className="rounded-2xl h-44 md:h-[307px] w-full lg:w-[394px] object-cover"
                     />
                   </div>
                 </motion.div>

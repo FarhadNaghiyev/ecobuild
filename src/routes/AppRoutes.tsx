@@ -1,19 +1,18 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "../pages/Home";
+import HomePage from "../pages/HomePage";
 import Contact from "../pages/Contact";
-import Services from "../pages/Services";
+import ServicesPage from "../pages/ServicesPage";
 
 import MainLayout from "../layouts/MainLayout";
 import Jobs from "../pages/Jobs";
-
 
 export default function AppRoutes() {
   return (
     <Routes>
       <Route element={<MainLayout />}>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/jobs" element={<Jobs />} />
-        <Route path="/services" element={<Services />} />
+        <Route path="/services" element={<ServicesPage />} />
         <Route path="/contact" element={<Contact />} />
       </Route>
     </Routes>

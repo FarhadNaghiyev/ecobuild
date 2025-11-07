@@ -15,7 +15,7 @@ export default function Header() {
   const isOpen = useSelector((state: RootState) => state.sidebar.isOpen);
 
   return (
-    <header className="flex items-center justify-between container mx-auto px-[clamp(1rem,4vw,4rem)] py-[clamp(1rem,1vw,2rem)] relative">
+    <header className=" 2xl:container 2xl:mx-auto flex items-center justify-between px-5 lg:px-16 pt-4 lg:pt-8 relative">
       <img
         src="/logo-desktop.webp"
         srcSet="/logo-mobile.webp 128w, /logo-desktop.webp 198w"
