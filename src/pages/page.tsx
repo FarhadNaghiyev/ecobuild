@@ -1,6 +1,6 @@
 import ContactSection from "../features/ContactSection";
 import HeroSection from "../features/HeroSection";
-import OurJobsSection from "../features/OurJobsSection";
+import OurProjectsSection from "../features/OurProjectsSection";
 import OurServicesSection from "../features/OurServicesSection";
 
 export default function HomePage() {
@@ -8,7 +8,7 @@ export default function HomePage() {
     <div className="flex flex-col gap-10 lg:gap-[100px]">
       <HeroSection />
       <OurServicesSection />
-      <OurJobsSection />
+      <OurProjectsSection />
       <ContactSection />
     </div>
   );

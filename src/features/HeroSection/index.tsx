@@ -6,12 +6,12 @@ function HeroSection() {
     <section className="2xl:container 2xl:mx-auto px-5 lg:px-16 pt-4 lg:pt-8 flex flex-col gap-10">
       <div className="flex flex-col lg:flex-row items-start gap-6">
         <motion.h1
-          className="m-0 p-0 flex-3 flex flex-col justify-start font-medium text-[clamp(1.25rem,7vw,3rem)] min-w-max"
+          className="leading-none m-0 p-0 flex-3 flex flex-col justify-start font-medium text-[clamp(1.25rem,7vw,3rem)] min-w-max"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}>
-          <div>Müasir sənayə binallarının</div>
-          <span className="text-primary-color">
+          Müasir sənayə binallarının
+          <span className="text-primary-color leading-none">
             tikintisinin innovativ həlli
           </span>
         </motion.h1>

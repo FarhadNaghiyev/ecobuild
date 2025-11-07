@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import isOpenReducer from "./slices/isOpenSlice";
-import ourJobReducer from "./slices/ourJobSlice";
+import ourProjectReducer from "./slices/ourProjectSlice";
 
 export const store = configureStore({
   reducer: { 
     sidebar: isOpenReducer,
-    ourJobs: ourJobReducer,
+    ourProjects: ourProjectReducer,
   },
   
   

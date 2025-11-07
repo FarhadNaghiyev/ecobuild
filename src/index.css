@@ -12,7 +12,6 @@
   font-weight: 400;
   --white-1:#EDEDED;
   --white-2:#F0F0F0;
-  
   --white-3:#F7F7F7;
   --white-4:#FFFFFF;
   --white-5:#808080;
@@ -26,6 +25,7 @@
   --black-20:#252525;
   --black-25:#111111;
   --black-30:#ABABAB;
+  --black-35:#1F1F1F;
   
 
   --green-1:#C3EAC3;
@@ -44,13 +44,7 @@
 @theme {
   --color-primary-color:var(--primary-color);
   --color-secondary-color:var(--secondary-color);
-  --color-black-5:var(--black-5);
-  --color-black-10:var(--black-10);
-  --color-black-15:var(--black-15);
-  --color-black-20:var(--black-20);
-  --color-black-25:var(--black-25);
-  --color-black-30:var(--black-30);
-
+  
   --color-white-1:var(--white-1);
   --color-white-2:var(--white-2);
   --color-white-3:var(--white-3);
@@ -60,10 +54,21 @@
   --color-white-15:var(--white-15);
   --color-white-20:var(--white-20);
 
+  --color-black-5:var(--black-5);
+  --color-black-10:var(--black-10);
+  --color-black-15:var(--black-15);
+  --color-black-20:var(--black-20);
+  --color-black-25:var(--black-25);
+  --color-black-30:var(--black-30);
+  --color-black-35:var(--black-35);
+
+
   --color-green-1:var(--green-1);
   --color-green-2:var(--green-2);
   --color-green-3:var(--green-3);
   --color-green-4:var(--green-4);
+  --color-green-5:var(--green-5);
+  --color-green-10:var(--green-10);
 }
 
 .custom-flex-center {
@@ -76,7 +81,10 @@ html {
 }
 
 
-
+body {
+  margin: 0;
+  padding: 0;
+}
 
 
 @keyframes pulse-circle {

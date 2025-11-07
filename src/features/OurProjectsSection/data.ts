@@ -1,4 +1,4 @@
-export const jobs = [
+export const projects = [
   {
     id: 0,
     title: "Prefabrik beton və sendviç panel montajı",

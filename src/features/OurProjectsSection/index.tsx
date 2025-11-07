@@ -1,26 +1,26 @@
 import { useCallback, useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { motion } from "framer-motion";
-import type { RootState } from "../../store";
+import type { RootState } from "../../lib/store";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 import SectionTitle from "../../components/SectionTitle";
-import JobCard from "./components/JobCard";
-import { setActiveIndex } from "../../store/slices/ourJobSlice";
-import { jobs } from "./data";
+import ProjectCard from "../../components/ProjectCard";
+import { setActiveIndex } from "../../lib/store/slices/ourProjectSlice";
+import { projects } from "./data";
 
 const ACTIVE_WIDTH = window.innerWidth < 768 ? 308 : 672;
 const INACTIVE_WIDTH = window.innerWidth < 768 ? 308 : 310;
 const GAP = window.innerWidth < 768 ? 8 : 12;
 
-export default function OurJobsSection() {
+export default function OurProjectsSection() {
   const dispatch = useDispatch();
   const activeIndex = useSelector(
-    (state: RootState) => state.ourJobs.activeIndex
+    (state: RootState) => state.ourProjects.activeIndex
   );
 
   const canGoPrev = activeIndex > 0;
-  const canGoNext = activeIndex < jobs.length - 1;
+  const canGoNext = activeIndex < projects.length - 1;
 
   const handleNext = useCallback(() => {
     if (canGoNext) {
@@ -43,7 +43,7 @@ export default function OurJobsSection() {
     }
 
     const totalWidth =
-      (jobs.length - 1) * (INACTIVE_WIDTH + GAP) + ACTIVE_WIDTH;
+      (projects.length - 1) * (INACTIVE_WIDTH + GAP) + ACTIVE_WIDTH;
 
     if (isMobile) {
       // mobilde hepsi aynı genişlikte, clamp yapma yok
@@ -58,7 +58,7 @@ export default function OurJobsSection() {
   useEffect(() => {
     if (window.innerWidth < 768) return;
     const interval = setInterval(() => {
-      if (activeIndex < jobs.length - 1) {
+      if (activeIndex < projects.length - 1) {
         dispatch(setActiveIndex(activeIndex + 1));
       }
     }, 3000);
@@ -76,9 +76,9 @@ export default function OurJobsSection() {
             className="flex gap-3"
             animate={{ x: offsetX }}
             transition={{ type: "spring", stiffness: 80, damping: 20 }}>
-            {jobs.map((job, i) => (
+            {projects.map((project, i) => (
               <div
-                key={job.id}
+                key={project.id}
                 className="shrink-0 transition-[width] duration-500 ease-in-out"
                 style={{
                   width:
@@ -86,7 +86,7 @@ export default function OurJobsSection() {
                       ? `${ACTIVE_WIDTH}px`
                       : `${INACTIVE_WIDTH}px`,
                 }}>
-                <JobCard job={job} isActive={i === activeIndex} />
+                <ProjectCard project={project} isActive={i === activeIndex} />
               </div>
             ))}
           </motion.div>

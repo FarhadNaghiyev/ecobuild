@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
-import CalendarIcon from "../../../assets/icons/calendar.svg";
-import LocationIcon from "../../../assets/icons/location-black.svg";
-import MetrIcon from "../../../assets/icons/metr.svg";
+import CalendarIcon from "../assets/icons/calendar.svg";
+import LocationIcon from "../assets/icons/location-black.svg";
+import MetrIcon from "../assets/icons/metr.svg";
 
-interface JobCardProps {
-  job: job;
+interface ProjectCardProps {
+  project: project;
   isActive: boolean;
 }
-type job = {
+type project = {
   id: number;
   title: string;
   description: string;
@@ -32,7 +32,7 @@ const infoItem = {
 };
 
 const isMobile = window.innerWidth < 768;
-export default function JobCard({ job, isActive }: JobCardProps) {
+export default function ProjectCard({ project, isActive }: ProjectCardProps) {
   return (
     <motion.div
       initial={false}
@@ -43,7 +43,7 @@ export default function JobCard({ job, isActive }: JobCardProps) {
       transition={{ type: "spring", stiffness: 80, damping: 18 }}
       className={`relative overflow-hidden bg-no-repeat bg-center bg-cover flex flex-col justify-between border-primary-color border-2 rounded-3xl pt-[clamp(1rem,2vw,1.5rem)] w-[308px] h-[349px] sm:w-[310px] sm:h-[556px] lg:w-[640px]`}
       style={{
-        backgroundImage: `url(${job.imageUrl})`,
+        backgroundImage: `url(${project.imageUrl})`,
       }}>
       <div>
         {isActive && (
@@ -94,7 +94,7 @@ export default function JobCard({ job, isActive }: JobCardProps) {
                 ? "font-semibold text-black-5 text-[clamp(1.125rem,2vw,1.5rem)]"
                 : "font-medium text-black-15 text-[clamp(1rem,2vw,1.125rem)]"
             }`}>
-            {job.title}
+            {project.title}
           </h3>
           {isActive && (
             <motion.p
@@ -102,7 +102,7 @@ export default function JobCard({ job, isActive }: JobCardProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.15 }}
               className="text-[clamp(14px,2vw,1rem)] text-black-15 mt-1 line-clamp-2">
-              {job.description}
+              {project.description}
             </motion.p>
           )}
         </motion.div>

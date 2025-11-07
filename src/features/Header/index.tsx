@@ -5,9 +5,8 @@ import CloseIcon from "../../assets/icons/close.svg";
 import MenuIcon from "../../assets/icons/menu.svg";
 
 import { useDispatch, useSelector } from "react-redux";
-import type { RootState, AppDispatch } from "../../store";
-
-import { toggleSidebar } from "../../store/slices/isOpenSlice";
+import type { RootState, AppDispatch } from "../../lib/store";
+import { toggleSidebar } from "../../lib/store/slices/isOpenSlice";
 import Navbar from "./Navbar";
 import ContactButtons from "./ContactButtons";
 export default function Header() {
