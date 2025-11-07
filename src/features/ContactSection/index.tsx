@@ -22,8 +22,14 @@ const itemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
 };
-
-export default function ContactSection() {
+interface ContactSectionProps {
+  sectionTitle: string;
+  children?: React.ReactNode;
+}
+export default function ContactSection({
+  sectionTitle,
+  children,
+}: ContactSectionProps) {
   const {
     register,
     handleSubmit,
@@ -38,8 +44,8 @@ export default function ContactSection() {
 
   return (
     <section className="pb-10 lg:pb-[100px] 2xl:container 2xl:mx-auto flex flex-col gap-8 lg:gap-10 px-5 lg:px-16">
-      <SectionTitle title="Bizimlə əlaqə" />
-
+      <SectionTitle title={sectionTitle} />
+      <div className="flex flex-col gap-4 lg:gap-8">{children}</div>
       <div
         className="rounded-3xl relative w-full bg-center bg-cover bg-no-repeat"
         style={{

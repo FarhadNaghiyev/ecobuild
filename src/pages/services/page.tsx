@@ -25,7 +25,7 @@ export default function ServicesPage() {
   };
 
   return (
-    <div className="2xl:container 2xl:mx-auto px-5 lg:px-16 flex flex-col gap-10 lg:gap-[100px] py-10 lg:py-[100px]">
+    <div className="2xl:container 2xl:mx-auto px-5 lg:px-16 flex flex-col gap-10 lg:gap-[100px] py-10 lg:py-[52px]">
       <section className="flex flex-col gap-8 lg:gap-10">
         <SectionTitle title="Xidmətlərimiz" />
 

@@ -46,10 +46,8 @@ export default function OurProjectsSection() {
       (projects.length - 1) * (INACTIVE_WIDTH + GAP) + ACTIVE_WIDTH;
 
     if (isMobile) {
-      // mobilde hepsi aynı genişlikte, clamp yapma yok
       return -total;
     } else {
-      // desktopta clamp kalsın, boşluk olmasın
       const maxOffset = totalWidth - ACTIVE_WIDTH;
       return Math.max(-total, -(maxOffset - ACTIVE_WIDTH));
     }
@@ -70,7 +68,6 @@ export default function OurProjectsSection() {
     <div className="2xl:container 2xl:mx-auto pl-5 lg:pl-16">
       <section className="flex flex-col gap-[clamp(32px,3vh,40px)] relative overflow-hidden">
         <SectionTitle title="Gördüyümüz işlər" />
-
         <div className="w-full flex items-center overflow-hidden">
           <motion.div
             className="flex gap-3"

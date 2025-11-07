@@ -9,7 +9,7 @@ export default function HomePage() {
       <HeroSection />
       <OurServicesSection />
       <OurProjectsSection />
-      <ContactSection />
+      <ContactSection sectionTitle="Bizimlə əlaqə" />
     </div>
   );
 }

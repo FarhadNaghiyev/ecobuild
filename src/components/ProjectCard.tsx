@@ -2,10 +2,12 @@ import { motion } from "framer-motion";
 import CalendarIcon from "../assets/icons/calendar.svg";
 import LocationIcon from "../assets/icons/location-black.svg";
 import MetrIcon from "../assets/icons/metr.svg";
+import { cn } from "../utils/MergeTailwindClasses";
 
 interface ProjectCardProps {
   project: project;
   isActive: boolean;
+  fixed?: boolean;
 }
 type project = {
   id: number;
@@ -32,16 +34,29 @@ const infoItem = {
 };
 
 const isMobile = window.innerWidth < 768;
-export default function ProjectCard({ project, isActive }: ProjectCardProps) {
+export default function ProjectCard({
+  project,
+  isActive,
+  fixed = false,
+}: ProjectCardProps) {
   return (
     <motion.div
       initial={false}
-      animate={{
-        width: isMobile ? (isActive ? 308 : 308) : isActive ? 640 : 310,
-        height: isMobile ? 349 : 556,
-      }}
+      animate={
+        fixed
+          ? {} // fixed olduğunda animasiya olmasın
+          : {
+              width: isMobile ? (isActive ? 308 : 308) : isActive ? 640 : 310,
+              height: isMobile ? 349 : 556,
+            }
+      }
       transition={{ type: "spring", stiffness: 80, damping: 18 }}
-      className={`relative overflow-hidden bg-no-repeat bg-center bg-cover flex flex-col justify-between border-primary-color border-2 rounded-3xl pt-[clamp(1rem,2vw,1.5rem)] w-[308px] h-[349px] sm:w-[310px] sm:h-[556px] lg:w-[640px]`}
+      className={cn(
+        "overflow-hidden bg-no-repeat bg-center bg-cover flex flex-col justify-between border-primary-color border-2 rounded-3xl pt-[clamp(1rem,2vw,1.5rem)]",
+        fixed
+          ? " h-[349px] sm:h-[584px] w-full"
+          : "relative w-[308px] h-[349px] sm:w-[310px] sm:h-[556px] lg:w-[640px]"
+      )}
       style={{
         backgroundImage: `url(${project.imageUrl})`,
       }}>
