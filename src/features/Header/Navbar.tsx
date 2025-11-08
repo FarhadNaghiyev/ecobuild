@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav className="hidden xl:flex space-x-8 items-center justify-center h-8">
+    <nav className="hidden xl:flex space-x-8 items-center justify-center h-8 ">
       <Link
-        to="/"
+        to="/about"
         className="text-[1rem] font-normal transform transition-transform duration-200 hover:scale-105">
         Haqqımızda
       </Link>
